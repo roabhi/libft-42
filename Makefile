@@ -6,7 +6,7 @@
 #    By: rabril-h <rabril-h@student.42barc...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 15:28:04 by rabril-h          #+#    #+#              #
-#    Updated: 2022/02/04 20:02:55 by rabril-h         ###   ########.bcn       #
+#    Updated: 2022/02/04 20:43:52 by rabril-h         ###   ########.bcn       #
 #                                                                              #
 #******************************************************************************#
 
@@ -51,6 +51,7 @@ SRCBONUS = ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
+			ft_lstadd_back.c \
 
 
 OBJ = $(SRC:%.c=%.o)
