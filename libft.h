@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barc...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 17:42:01 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/02/04 16:20:26 by rabril-h         ###   ########.bcn      */
+/*   Updated: 2022/02/04 19:41:20 by rabril-h         ###   ########.bcn      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
-
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
