@@ -6,7 +6,7 @@
 #    By: rabril-h <rabril-h@student.42barc...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 15:28:04 by rabril-h          #+#    #+#              #
-#    Updated: 2022/02/03 20:23:03 by rabril-h         ###   ########.bcn       #
+#    Updated: 2022/02/04 16:21:28 by rabril-h         ###   ########.bcn       #
 #                                                                              #
 #******************************************************************************#
 
@@ -45,24 +45,25 @@ SRC = ft_atoi.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c \
 
-SRCBONUS = ft_lstnew.c
+SRCBONUS = ft_lstnew.c \
+			ft_lstadd_front.c \
 
 
 OBJ = $(SRC:%.c=%.o)
 
 OBJBONUS = $(SRCBONUS:%.c=%.o)
 
-CC = @gcc
 FLAGS = -Wall -Werror -Wextra
 
-$(NAME): 
-	$(CC) $(FLAGS) -c $(SRC) -I ./
-	@ar rc $(NAME) $(OBJ)
-	@echo "$(NAME) created"
+.c.o: ${CC} ${FLAGS} -I libft.h -c ${<:.c =.o}
 
 all: $(NAME)
+
+$(NAME): ${OBJ} 
+	@ar rcs $(NAME) $(OBJ)
+	ranlib ${NAME}
 
 clean:
 	@rm -f $(OBJ)
@@ -72,15 +73,13 @@ fclean: clean
 	@rm -f $(NAME)
 	@echo "$(NAME) deleted"
 
-bonus:
-	$(OBJ) $(OBJBONUS)
-	@ar rc $(NAME) $(OBJ) $(OBJBONUS)
-	@echo "$(OBJBONUS) created!"
-
+bonus:  $(OBJ) $(OBJBONUS)
+		@ar rcs $(NAME) $(OBJ) $(OBJBONUS)
+		ranlib ${NAME}
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
 
+.PHONY: all clean fclean re bonus
 
 

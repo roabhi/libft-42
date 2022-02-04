@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barc...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 13:31:25 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/02/03 20:06:03 by rabril-h         ###   ########.bcn      */
+/*   Updated: 2022/02/04 15:58:17 by rabril-h         ###   ########.bcn      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,12 @@ void	f_stri(unsigned int i, char *c)
 	ft_putnbr_fd(i, 1);
 	ft_putchar_fd('}', 1);
 }
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 int	main(void)
 {

@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barc...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 17:42:01 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/02/03 15:27:41 by rabril-h         ###   ########.bcn      */
+/*   Updated: 2022/02/04 16:20:26 by rabril-h         ###   ########.bcn      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -56,6 +58,6 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 t_list	*ft_lstnew(void *content);
-
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
