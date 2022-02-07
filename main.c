@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barc...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 13:31:25 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/02/04 15:58:17 by rabril-h         ###   ########.bcn      */
+/*   Updated: 2022/02/07 20:00:55 by rabril-h         ###   ########.bcn      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,17 @@
 #include "ft_putendl_fd.c"
 #include "ft_putnbr_fd.c"
 #include "ft_lstnew.c"
+#include "ft_lstadd_front.c"
+#include "ft_lstsize.c"
+#include "ft_lstlast.c"
+#include "ft_lstadd_back.c"
+#include "ft_lstdelone.c"
+#include "ft_lstclear.c"
+
+
+
+
+// Funciones de apoyo a los ejercicios adicionales
 
 char	f_mapi(unsigned int i, char c)
 {
@@ -64,11 +75,24 @@ void	f_stri(unsigned int i, char *c)
 	ft_putchar_fd('}', 1);
 }
 
-typedef struct s_list
+void	ft_delone(void *p)
 {
-	void			*content;
-	struct s_list	*next;
-}	t_list;
+	printf("La direccion e mi puntero es %p y el contenido de mi puntero es %s \n", p, (char *)p );
+	ft_bzero(p,ft_strlen(p));
+	p = NULL;
+	//printf("La direccion e mi puntero es %p y el contenido de mi puntero es %s \n\n", p, (char *)p );
+}
+
+void	ft_clear(void *p)
+{
+	printf("ft_clear -> La direccion de mi puntero es %p y el contenido de mi puntero es %s y tiene %d caracteres \n\n", p, (char *)p, (int)ft_strlen(p));
+	ft_bzero(p,ft_strlen(p));
+	p = NULL;
+	//printf("ft_clear -> La direccion de mi puntero es %p y el contenido de mi puntero es %s y tiene %d caracteres  \n\n", p, (char *)p, (int)ft_strlen(p));
+}
+
+// main
+
 
 int	main(void)
 {
@@ -368,6 +392,122 @@ int	main(void)
 
 	char	str44[] = "soy un string";
 	printf("El resultado de mi lista es -->  %s\n\n", (char *)ft_lstnew(str44)->content);
+
+	printf("========= ft_lstadd_front ==========\n\n");
+
+	t_list *ptr_lst;
+
+	t_list lista_1;
 	
+	lista_1.content = "hello";
+	lista_1.next = NULL;
+
+	ptr_lst = &lista_1;
+
+	t_list	lista_2;
+
+	lista_2.content = "world";
+	lista_2.next = NULL;
+
+	printf("El resultado de mi lista antes de lstadd es %s \n", ptr_lst->content);
+
+	ft_lstadd_front(&ptr_lst, &lista_2);
+
+	printf("El resultado de mi despues de lstadd lista es %s \n", ptr_lst->content);
+
+	printf("========= ft_lstsize ==========\n\n");
+
+	t_list *ptr_lst_2;
+	t_list lista_3;
+	t_list lista_4;
+	t_list lista_5;
+
+	ptr_lst_2 = &lista_3;
+	lista_3.next = &lista_4;
+	lista_4.next = &lista_5;
+	lista_5.next = NULL; //0
+
+	printf("Mi lista anidada tiene tiene una longitud de %d\n", ft_lstsize(ptr_lst_2));
+
+	printf("========= ft_lstlast ==========\n\n");
+
+	t_list *ptr_lst_3;
+	t_list lista_6;
+	t_list lista_7;
+	t_list lista_8;
+
+	ptr_lst_3 = &lista_6;
+	lista_6.next = &lista_7;
+	lista_7.next = &lista_8;
+	lista_8.content = "last";
+	lista_8.next = NULL;
+
+	printf("El ultimo item de mi lista anidada es %s\n", (char *)ft_lstlast(ptr_lst_3)->content);
+
+	printf("========= ft_lstadd_back ==========\n\n");
+
+	t_list *ptr_lst_4;
+
+	t_list lista_9;
+	t_list lista_10;
+	t_list lista_11;
+	t_list lista_12; //Nuevo elemento
+
+	ptr_lst_4 = &lista_9;
+	lista_9.next = &lista_10;
+	lista_10.next = &lista_11;
+	
+	lista_9.content = "first";
+	lista_10.content = "second";
+	lista_11.content = "third";
+	lista_11.next = NULL;
+	lista_12.content = "needs to be latest";
+	
+	
+	printf("El contenido de mi ultimo elemento de mi lista antes de lstadd_back es %s \n", ptr_lst_4->next->next->content);
+
+	ft_lstadd_back(&ptr_lst_4, &lista_12);
+
+    printf("El resultado de mi despues de lstadd lista es %s \n", ptr_lst_4->next->next->next->content);
+
+	printf("========= ft_lstdelone ==========\n\n");
+
+	char	str45[] = "first";
+	char	str46[] = "second";
+	char	str47[] = "third";
+
+	
+	t_list	*lista_16 = ft_lstnew(&str45);	
+	t_list	*lista_17 = ft_lstnew(&str46);
+	t_list	*lista_18 = ft_lstnew(&str47);
+
+
+	ft_lstadd_back(&lista_16, lista_17);
+	ft_lstadd_back(&lista_16, lista_18);
+	printf("la longitud de mi lista es %d y el contenido del elemento a eliminar es  %s \n\n", ft_lstsize(lista_16), lista_16->next->next->content);
+	
+	ft_lstdelone(lista_18, ft_delone);
+	lista_17->next = NULL;
+
+	printf("la longitud de mi lista es %d y su contenido del elemento a eliminar es %s \n\n", ft_lstsize(lista_16), lista_16->next->content);
+
+	printf("========= ft_lstclear ==========\n\n");
+
+	char	str48[] = "first";
+	char	str49[] = "second";
+	char	str50[] = "third";
+
+	t_list *lista_19 = ft_lstnew(&str48);
+	t_list *lista_20 = ft_lstnew(&str49);
+	t_list *lista_21 = ft_lstnew(&str50);
+
+
+	ft_lstadd_back(&lista_19, lista_20);
+	ft_lstadd_back(&lista_19, lista_21);
+
+	//printf("la longitud de mi lista es %d y el contenido del elemento a eliminar es  %s \n\n", ft_lstsize(ptr_lst_5), lista_19->next->next->content);
+
+	ft_lstclear(&lista_19, ft_clear);
+
 	return (0);
 }
