@@ -6,7 +6,7 @@
 #    By: rabril-h <rabril-h@student.42barc...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 15:28:04 by rabril-h          #+#    #+#              #
-#    Updated: 2022/02/08 15:01:44 by rabril-h         ###   ########.bcn       #
+#    Updated: 2022/02/08 17:11:21 by rabril-h         ###   ########.bcn       #
 #                                                                              #
 #******************************************************************************#
 
@@ -72,7 +72,7 @@ $(NAME): ${OBJ}
 	ranlib ${NAME}
 
 clean:
-	@rm -f $(OBJ)
+	@rm -f $(OBJ) $(OBJBONUS)
 	@echo "OBJ deleted"
 
 fclean: clean
