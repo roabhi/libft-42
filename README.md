@@ -37,3 +37,13 @@ Libft is a custom library made in C as part of the Cursus for the 42 school.
 - [`ft_putstr_fd`](ft_putstr_fd.c)        - Writes char[] into file directory.
 - [`ft_putendl_fd`](ft_putendl_fd.c)	  - Writes char[] and \n into file directory.
 - [`ft_putnbr_fd`](ft_putnbr_fd.c)	      - Writes int into file directory.
+
+## Libft Bonus
+- [`ft_lstnew`](ft_lstnew.c)	           - Creates new t_list.
+- [`ft_lstadd_front`](ft_lstadd_front.c    - Creates new t_list in front of existing list.
+- [`ft_lstsize`](ft_lstsize.c)	           - Returns size of list.
+- [`ft_lstlast`](ft_lstlast.c)	           - Returns last element from list.
+- [`ft_lstadd_back`](ft_lstadd_back.c)	   - Adds new t_list element at the end of list
+- [`ft_lstdelone`](ft_lstdelone.c)	       - Takes t_list element and free its content.
+- [`ft_lstclear`](ft_lstclear.c)	       - Removes and free all content from list for each t_list element.
+- [`ft_lstiter`](ft_lstiter.c)	           - Iterates list ’lst’ and applies function to each element.
