@@ -40,7 +40,7 @@ Libft is a custom library made in C as part of the Cursus for the 42 school.
 
 ## Libft Bonus
 - [`ft_lstnew`](ft_lstnew.c)	           - Creates new t_list.
-- [`ft_lstadd_front`](ft_lstadd_front.c    - Creates new t_list in front of existing list.
+- [`ft_lstadd_front`](ft_lstadd_front.c)   - Creates new t_list in front of existing list.
 - [`ft_lstsize`](ft_lstsize.c)	           - Returns size of list.
 - [`ft_lstlast`](ft_lstlast.c)	           - Returns last element from list.
 - [`ft_lstadd_back`](ft_lstadd_back.c)	   - Adds new t_list element at the end of list
