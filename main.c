@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barc...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 13:31:25 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/02/07 20:00:55 by rabril-h         ###   ########.bcn      */
+/*   Updated: 2022/02/08 15:28:36 by rabril-h         ###   ########.bcn      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@
 #include "ft_lstadd_back.c"
 #include "ft_lstdelone.c"
 #include "ft_lstclear.c"
+#include "ft_lstiter.c"
 
 
 
@@ -89,6 +90,15 @@ void	ft_clear(void *p)
 	ft_bzero(p,ft_strlen(p));
 	p = NULL;
 	//printf("ft_clear -> La direccion de mi puntero es %p y el contenido de mi puntero es %s y tiene %d caracteres  \n\n", p, (char *)p, (int)ft_strlen(p));
+}
+
+void	ft_iter(void *p)
+{
+	//t_list *el;
+	//el = p;	
+	//printf("La direccion del puntero de mi lista es %p y contenido del item de mi lista es %s \n", el, (char *)el->content);)
+	printf("La direccion del puntero de mi lista es %p y contenido del item de mi lista es %s \n", p, (char *)p);
+
 }
 
 // main
@@ -508,6 +518,26 @@ int	main(void)
 	//printf("la longitud de mi lista es %d y el contenido del elemento a eliminar es  %s \n\n", ft_lstsize(ptr_lst_5), lista_19->next->next->content);
 
 	ft_lstclear(&lista_19, ft_clear);
+
+	printf("========= ft_lstiter ==========\n\n");
+
+	char	str51[] = "first";
+	char	str52[] = "second";
+	char	str53[] = "third";
+	char	str54[] = "last";
+
+	t_list *lista_22 = ft_lstnew(&str51);
+	t_list *lista_23 = ft_lstnew(&str52);
+	t_list *lista_24 = ft_lstnew(&str53);
+	t_list *lista_25 = ft_lstnew(&str54);
+
+
+	ft_lstadd_back(&lista_22, lista_23);
+	ft_lstadd_back(&lista_22, lista_24);
+	ft_lstadd_back(&lista_22, lista_25);
+
+	ft_lstiter(lista_22, ft_iter);
+	
 
 	return (0);
 }
