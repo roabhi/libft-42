@@ -4,6 +4,7 @@ Libft is a custom library made in C as part of the Cursus for the 42 school.
 
 ## Libft Part-1
 
+- [`ft_atoi`](ft_atoi.c)                  - Turns char[] into int.
 - [`ft_isalpha`](ft_isalpha.c)            - Validates char as alphanumeric.
 - [`ft_isdigit`](ft_isdigit.c)            - Validates char as numeric.
 - [`ft_isalnum`](ft_isalnum.c)            - Validates char as alphanumeric or numeric.
@@ -24,3 +25,15 @@ Libft is a custom library made in C as part of the Cursus for the 42 school.
 - [`ft_memchr`](ft_memchr.c)              - Finds char into (char *)void.
 - [`ft_memcmp`](ft_memcmp.c)              - Compares 2 areas into memory.
 - [`ft_strnstr`](ft_strnstr.c)            - Find char[] into char[].
+
+## Libft Part-2
+- [`ft_substr`](ft_substr.c)	          - Returns sub char[] from char[]
+- [`ft_strjoin`](ft_strjoin.c)	          - Concats 2 char[].
+- [`ft_strtrim`](ft_strtrim.c)	          - Splice a char[] from given values.
+- [`ft_split`](ft_split.c)	              - Splice a char[] using char as index.
+- [`ft_itoa`](ft_itoa.c)	              - Turns int into char[]. 
+- [`ft_strmapi`](ft_strmapi.c)            - Aplies function to all char from char[]. 
+- [`ft_putchar_fd`](ft_putchar_fd.c)      - Writes char into file directory.
+- [`ft_putstr_fd`](ft_putstr_fd.c)        - Writes char[] into file directory.
+- [`ft_putendl_fd`](ft_putendl_fd.c)	  - Writes char[] and \n into file directory.
+- [`ft_putnbr_fd`](ft_putnbr_fd.c)	      - Writes int into file directory.
