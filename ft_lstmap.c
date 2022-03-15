@@ -6,12 +6,11 @@
 /*   By: rabril-h <rabril-h@student.42barc...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 20:34:10 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/03/15 11:24:33 by rabril-h         ###   ########.bcn      */
+/*   Updated: 2022/03/15 11:38:27 by rabril-h         ###   ########.bcn      */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
