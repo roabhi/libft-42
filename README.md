@@ -47,3 +47,4 @@ Libft is a custom library made in C as part of the Cursus for the 42 school.
 - [`ft_lstdelone`](ft_lstdelone.c)	       - Takes t_list element and free its content.
 - [`ft_lstclear`](ft_lstclear.c)	       - Removes and free all content from list for each t_list element.
 - [`ft_lstiter`](ft_lstiter.c)	           - Iterates list ’lst’ and applies function to each element.
+- [`ft_lstmap`](ft_lstmap.c)			   - Iterates list ’lst’ and creates a new list based on its contents
